@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Destination - Tourist Destination Manager{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="card border-danger">
+            <div class="card-header bg-danger text-white">
+                <h2 class="h4 mb-0">Delete Destination</h2>
+            </div>
+            <div class="card-body">
+                <p>Are you sure you want to delete the destination <strong>{{ destination.place_name }}</strong>? This action cannot be undone.</p>
+                <p class="text-muted">All associated images will also be deleted.</p>
+                
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{% url 'destinations:destination-detail' destination.slug %}" class="btn btn-secondary me-md-2">Cancel</a>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

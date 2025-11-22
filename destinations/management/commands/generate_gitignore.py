@@ -1,0 +1,85 @@
+from django.core.management.base import BaseCommand
+import os
+
+class Command(BaseCommand):
+    help = 'Generate a .gitignore file for Django projects'
+
+    def handle(self, *args, **options):
+        gitignore = [
+            '# Python',
+            '__pycache__/',
+            '*.py[cod]',
+            '*$py.class',
+            '*.so',
+            '.Python',
+            'build/',
+            'develop-eggs/',
+            'dist/',
+            'downloads/',
+            'eggs/',
+            '.eggs/',
+            'lib/',
+            'lib64/',
+            'parts/',
+            'sdist/',
+            'var/',
+            'wheels/',
+            '*.egg-info/',
+            '.installed.cfg',
+            '*.egg',
+            'MANIFEST',
+            '',
+            '# Django',
+            '*.log',
+            'local_settings.py',
+            'db.sqlite3',
+            'media/',
+            'staticfiles/',
+            '',
+            '# Environment variables',
+            '.env',
+            '.venv',
+            'env/',
+            'venv/',
+            'ENV/',
+            'env.bak/',
+            'venv.bak/',
+            '',
+            '# IDE',
+            '.idea/',
+            '.vscode/',
+            '*.swp',
+            '*.swo',
+            '*~',
+            '',
+            '# OS generated files',
+            '.DS_Store',
+            '.DS_Store?',
+            '._*',
+            '.Spotlight-V100',
+            '.Trashes',
+            'ehthumbs.db',
+            'Thumbs.db',
+            '',
+            '# Project specific',
+            '*.sqlite3',
+            '*.db',
+            '*.sql',
+            'migrations/',
+            '*.pyc',
+            '*.pyo',
+            '*.pyd',
+            '.Python',
+            'env/',
+            'venv/',
+            'ENV/',
+            'env.bak/',
+            'venv.bak/',
+            ''
+        ]
+        
+        # Write to file
+        with open('.gitignore', 'w', encoding='utf-8') as f:
+            f.write('\n'.join(gitignore))
+        
+        self.stdout.write(self.style.SUCCESS('.gitignore file generated'))

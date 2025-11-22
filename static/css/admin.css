@@ -1,0 +1,33 @@
+/* Custom admin styles */
+.field-image_preview img {
+    max-height: 150px;
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+/* Improve form layout */
+.inline-group .tabular td.original p {
+    display: none;
+}
+
+.inline-group .tabular tr.add-row td {
+    padding-top: 10px;
+}
+
+/* Make the image preview larger in the change form */
+.field-image_preview {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Style the file input */
+.file-upload {
+    margin-bottom: 10px;
+}
+
+/* Style the delete checkbox */
+.delete {
+    text-align: center;
+}

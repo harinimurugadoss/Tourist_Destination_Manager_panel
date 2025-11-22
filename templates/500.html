@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Server Error - Tourist Destination Manager{% endblock %}
+
+{% block content %}
+<div class="container text-center py-5">
+    <h1 class="display-1 text-danger">500</h1>
+    <h2>Server Error</h2>
+    <p class="lead">Oops! Something went wrong on our end. We're working to fix it.</p>
+    <a href="{% url 'home' %}" class="btn btn-primary mt-3">Go to Homepage</a>
+</div>
+{% endblock %}
